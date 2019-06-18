@@ -1,5 +1,5 @@
 /**
-    * Joke;
+    * Joke
     *
     * This program is the joke Generator class for the Dad-Joke Generator
     * 
@@ -83,26 +83,38 @@ public class Joke
         // Set up random
         Random rand = new Random(); 
         
-        //
+        // Check if there is no more jokes
         if (jokeList.size() == 0)
         {
             System.out.println("Looks like we ran out of jokes!");
         }
         else
         {
+            // Create a random int
             int jokeNum = rand.nextInt(jokeList.size());
+            
+            // Find the first part of the joke number
             System.out.println(jokeList.get(jokeNum));
+            
+            // Wait
             delay();
+            
+            // Find the second part of the joke number
             System.out.println(answerList.get(jokeNum));
+            
+            // Remove the joke as to avoid repeats
             jokeList.remove(jokeNum);
             answerList.remove(jokeNum);
         }
     }
     
+    // Wait before continuing 
     public void delay()
     {
+        // I don't really know why we need this, only that we need it
         try 
         {
+            // Wait
             Thread.sleep(delay);
         }
         catch (InterruptedException ex)
